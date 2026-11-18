@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5500/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive e-commerce customer behavior dashboard.">
+  <title>ShopScope | E-Commerce Customer Behavior</title>
+  <link href="./ShopScope _ E-Commerce Customer Behavior_files/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./ShopScope _ E-Commerce Customer Behavior_files/css2" rel="stylesheet">
+  <style>
+ :root{--navy:#142b3a;--ink:#1d3442;--muted:#758592;--teal:#168b8d;--teal-dark:#0e6e73;--paper:#f4f7f8;--line:#e7edef;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}.page-wrap{max-width:1440px;padding-left:clamp(18px,4vw,64px);padding-right:clamp(18px,4vw,64px)}
+.topbar{background:var(--navy);min-height:70px}.brand{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}.brand-mark{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#1c9a9b;color:#fff;font-weight:800}.nav-note{color:#a9c0ca;font-size:.68rem;letter-spacing:1.7px;font-weight:700}
+.hero{padding:26px 0 14px}.eyebrow{font-size:.68rem;letter-spacing:1.8px;color:var(--teal);font-weight:700;margin:0 0 9px}.hero h1{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-1.7px;font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;color:var(--navy);margin:0}.hero-copy{color:var(--muted);max-width:610px;margin:14px 0 0;font-size:.98rem;line-height:1.7}
+.filter-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:min(100%,290px);box-shadow:0 8px 24px #20384708}.filter-panel label{font-size:.78rem;font-weight:700;color:var(--ink)}.form-select{border-color:#dfe7e9;border-radius:10px;padding:10px 12px;font-size:.9rem}.form-select:focus{border-color:var(--teal);box-shadow:0 0 0 .2rem #168b8d20}.btn-reset{padding:0;color:var(--teal-dark);font-weight:700;font-size:.8rem}
+.kpi-card,.chart-card,.table-card{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 26px #1d344208}.kpi-card{padding:19px 21px;height:100%;min-height:132px}.kpi-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:.82rem;font-weight:600}.kpi-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:#e8f5f4;color:var(--teal);font-weight:800}.kpi-value{font-family:Manrope,sans-serif;font-size:clamp(1.65rem,3vw,2.1rem);font-weight:800;color:var(--navy);margin-top:8px;letter-spacing:-.8px}.kpi-foot{font-size:.72rem;color:#96a2aa;margin-top:2px}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px}.section-heading h2,.table-heading h2{font-family:Manrope,sans-serif;font-weight:800;font-size:1.55rem;margin:0;color:var(--navy);letter-spacing:-.5px}.data-count,.table-hint{font-size:.76rem;color:var(--muted);background:#eaf0f2;border-radius:30px;padding:7px 12px}
+.chart-card{padding:20px 21px}.chart-title{display:flex;justify-content:space-between;align-items:start;gap:12px}.chart-title h3{font-family:Manrope,sans-serif;font-size:1rem;font-weight:800;margin:0;color:var(--navy)}.chart-title p{font-size:.77rem;color:var(--muted);margin:5px 0 0}.chart-tag{font-size:.62rem;letter-spacing:1px;font-weight:800;color:var(--teal);background:#e8f5f4;border-radius:6px;padding:6px 8px}.chart-area{position:relative;height:270px;margin-top:18px}.finding{border-top:1px solid var(--line);margin:14px 0 0;padding:12px 0 0;font-size:.78rem;line-height:1.6;color:#526673}.finding strong{color:var(--teal-dark)}
+.table-card{overflow:hidden}.table-heading{padding:22px 22px 15px;display:flex;align-items:end;justify-content:space-between;gap:12px}.table-heading .eyebrow{margin-bottom:6px}.table{font-size:.79rem;white-space:nowrap}.table thead th{background:#f7fafb;color:#657783;font-size:.68rem;letter-spacing:.5px;text-transform:uppercase;font-weight:700;border-bottom:1px solid var(--line);padding:13px 16px}.table tbody td{padding:13px 16px;border-color:#edf1f2;color:#405563}.table tbody tr:hover{background:#f9fcfc}.customer-id{font-weight:700;color:var(--navy)!important}.amount{font-weight:700;color:var(--navy)!important}.rating{color:#c58a20;font-weight:700}.category-pill{display:inline-block;background:#eaf5f4;color:#18777a;padding:5px 9px;border-radius:20px;font-size:.7rem;font-weight:700}
+.insight-note{display:flex;gap:13px;align-items:flex-start;background:#eaf3f4;border:1px solid #dcebed;border-radius:14px;padding:17px 19px;color:#526673}.note-icon{width:25px;height:25px;flex:0 0 25px;border-radius:50%;display:grid;place-items:center;background:#d5e9e9;color:var(--teal-dark);font-weight:800}.insight-note strong{font-size:.82rem;color:var(--navy)}.insight-note p{font-size:.75rem;line-height:1.65;margin:4px 0 0}.footer{margin-top:50px;padding:22px 0;background:var(--navy);color:#a9bdc6;font-size:.72rem}
+@media(max-width:767px){.nav-note{font-size:.55rem;letter-spacing:1px}.hero{padding-top:20px}.filter-panel{width:100%}.section-heading{align-items:start;flex-direction:column}.chart-area{height:245px}.table-heading{align-items:start;flex-direction:column}.kpi-card{padding:15px;min-height:125px}}
+
+.source-line{font-size:.68rem;color:#8a989f;margin:6px 0 0;padding-top:2px}.chart-area canvas{max-width:100%}
+
+  </style>
+  <script src="./ShopScope _ E-Commerce Customer Behavior_files/chart.umd.min.js.download"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark topbar">
+    <div class="container-fluid page-wrap">
+      <a class="navbar-brand brand" href="http://127.0.0.1:5500/#"><span class="brand-mark">S</span> ShopScope</a>
+      <span class="nav-note">CUSTOMER INSIGHTS DASHBOARD</span>
+    </div>
+  </nav>
+
+  <main class="container-fluid page-wrap py-4 py-lg-5">
+    <section class="hero d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3">
+      <div>
+        <p class="eyebrow">PROJECT 09 · DATA DISSEMINATION</p>
+        <h1>Understanding online<br class="d-none d-md-block"> shopping behavior.</h1>
+        <p class="hero-copy">Explore customer demographics, purchases, product categories and payment choices in one place.</p>
+      </div>
+      <div class="filter-panel">
+        <label for="categoryFilter" class="form-label">Filter by product category</label>
+        <select id="categoryFilter" class="form-select">
+          <option value="All">All categories</option>
+        <option value="Beauty">Beauty</option><option value="Electronics">Electronics</option><option value="Fashion">Fashion</option><option value="Home">Home</option><option value="Sports">Sports</option></select>
+        <button id="resetFilter" class="btn btn-reset mt-2" type="button">Reset filter ↺</button>
+      </div>
+    </section>
+
+    <section class="row g-3 mt-3" aria-label="Key performance indicators">
+      <div class="col-6 col-xl-4">
+        <article class="kpi-card">
+          <div class="kpi-top"><span>Total orders</span><span class="kpi-icon">▤</span></div>
+          <div class="kpi-value" id="totalOrders">30</div><div class="kpi-foot">Orders in selected category</div>
+        </article>
+      </div>
+      <div class="col-6 col-xl-4">
+        <article class="kpi-card">
+          <div class="kpi-top"><span>Average order value</span><span class="kpi-icon">£</span></div>
+          <div class="kpi-value" id="averageOrder">EGP 1,909</div><div class="kpi-foot">Average spend per order · EGP</div>
+        </article>
+      </div>
+      <div class="col-12 col-xl-4">
+        <article class="kpi-card">
+          <div class="kpi-top"><span>Average customer rating</span><span class="kpi-icon">★</span></div>
+          <div class="kpi-value" id="averageRating">4.3 / 5</div><div class="kpi-foot">Out of 5 stars</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-heading mt-5">
+      <div><p class="eyebrow">CUSTOMER &amp; PURCHASE ANALYSIS</p><h2>Explore the data</h2></div>
+      <span class="data-count" id="recordCount">30 of 30 records</span>
+    </section>
+
+    <section class="row g-3 mt-1">
+      <div class="col-12 col-xl-6">
+        <article class="chart-card h-100">
+          <div class="chart-title"><div><h3>Customer demographics</h3><p>Orders by age group and gender</p></div><span class="chart-tag">BAR</span></div>
+          <div class="chart-area"><canvas id="demographicsChart" role="img" aria-label="Bar chart showing customer orders by age group and gender" width="789" height="405" style="display: block; box-sizing: border-box; height: 270px; width: 526px;"></canvas></div>
+          <p class="finding" id="demographicsFinding"><strong>Finding:</strong> Age group 18-24 has the most orders (10). <span class="source-note">Source: project dataset (simulated records).</span></p>
+        </article>
+      </div>
+      <div class="col-12 col-xl-6">
+        <article class="chart-card h-100">
+          <div class="chart-title"><div><h3>Purchases over time</h3><p>Number of orders per month</p></div><span class="chart-tag">LINE</span></div>
+          <div class="chart-area"><canvas id="purchasesChart" role="img" aria-label="Line chart showing purchases over time" width="789" height="405" style="display: block; box-sizing: border-box; height: 270px; width: 526px;"></canvas></div>
+          <p class="finding" id="purchasesFinding"><strong>Finding:</strong> Jan 26 has the most purchases (5). <span class="source-note">Source: project dataset (simulated records).</span></p>
+        </article>
+      </div>
+      <div class="col-12 col-xl-7">
+        <article class="chart-card h-100">
+          <div class="chart-title"><div><h3>Popular product categories</h3><p>Number of orders in each category</p></div><span class="chart-tag">BAR</span></div>
+          <div class="chart-area"><canvas id="popularChart" role="img" aria-label="Bar chart showing popular product categories" width="935" height="405" style="display: block; box-sizing: border-box; height: 270px; width: 623px;"></canvas></div>
+          <p class="finding" id="popularFinding"><strong>Finding:</strong> Fashion is the most popular category (7 orders). <span class="source-note">Source: project dataset (simulated records).</span></p>
+        </article>
+      </div>
+      <div class="col-12 col-xl-5">
+        <article class="chart-card h-100">
+          <div class="chart-title"><div><h3>Payment methods</h3><p>Share of orders by payment type</p></div><span class="chart-tag">PIE</span></div>
+          <div class="chart-area"><canvas id="paymentChart" role="img" aria-label="Pie chart showing payment methods" width="642" height="405" style="display: block; box-sizing: border-box; height: 270px; width: 428px;"></canvas></div>
+          <p class="finding" id="paymentFinding"><strong>Finding:</strong> Card is the most used method (13 orders). <span class="source-note">Source: project dataset (simulated records).</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="table-card mt-4">
+      <div class="table-heading">
+        <div><p class="eyebrow">ORDER RECORDS</p><h2>Customer data table</h2></div>
+        <span class="table-hint">Showing filtered records</span>
+      </div>
+      <div class="table-responsive">
+        <table class="table align-middle mb-0">
+          <thead><tr><th>Customer ID</th><th>Age group</th><th>Gender</th><th>Category</th><th>Purchase date</th><th>Order value</th><th>Payment</th><th>Rating</th></tr></thead>
+          <tbody id="dataTable"><tr><td class="customer-id">C001</td><td>18-24</td><td>Female</td><td><span class="category-pill">Fashion</span></td><td>2026-01-05</td><td class="amount">EGP 850</td><td>Card</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C002</td><td>25-34</td><td>Male</td><td><span class="category-pill">Electronics</span></td><td>2026-01-08</td><td class="amount">EGP 4,200</td><td>Wallet</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C003</td><td>18-24</td><td>Female</td><td><span class="category-pill">Beauty</span></td><td>2026-01-12</td><td class="amount">EGP 450</td><td>Cash on Delivery</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C004</td><td>35-44</td><td>Female</td><td><span class="category-pill">Home</span></td><td>2026-01-17</td><td class="amount">EGP 1,250</td><td>Card</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C005</td><td>25-34</td><td>Female</td><td><span class="category-pill">Fashion</span></td><td>2026-01-22</td><td class="amount">EGP 1,100</td><td>Wallet</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C006</td><td>18-24</td><td>Male</td><td><span class="category-pill">Electronics</span></td><td>2026-02-03</td><td class="amount">EGP 3,500</td><td>Card</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C007</td><td>45+</td><td>Female</td><td><span class="category-pill">Home</span></td><td>2026-02-07</td><td class="amount">EGP 2,100</td><td>Cash on Delivery</td><td class="rating">★ 3/5</td></tr><tr><td class="customer-id">C008</td><td>25-34</td><td>Male</td><td><span class="category-pill">Sports</span></td><td>2026-02-11</td><td class="amount">EGP 950</td><td>Wallet</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C009</td><td>18-24</td><td>Female</td><td><span class="category-pill">Beauty</span></td><td>2026-02-15</td><td class="amount">EGP 600</td><td>Card</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C010</td><td>35-44</td><td>Male</td><td><span class="category-pill">Electronics</span></td><td>2026-02-21</td><td class="amount">EGP 5,200</td><td>Card</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C011</td><td>25-34</td><td>Female</td><td><span class="category-pill">Fashion</span></td><td>2026-03-02</td><td class="amount">EGP 1,450</td><td>Cash on Delivery</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C012</td><td>18-24</td><td>Male</td><td><span class="category-pill">Sports</span></td><td>2026-03-06</td><td class="amount">EGP 700</td><td>Wallet</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C013</td><td>35-44</td><td>Female</td><td><span class="category-pill">Beauty</span></td><td>2026-03-10</td><td class="amount">EGP 800</td><td>Card</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C014</td><td>25-34</td><td>Male</td><td><span class="category-pill">Home</span></td><td>2026-03-14</td><td class="amount">EGP 1,750</td><td>Cash on Delivery</td><td class="rating">★ 3/5</td></tr><tr><td class="customer-id">C015</td><td>18-24</td><td>Female</td><td><span class="category-pill">Fashion</span></td><td>2026-03-19</td><td class="amount">EGP 950</td><td>Card</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C016</td><td>45+</td><td>Male</td><td><span class="category-pill">Electronics</span></td><td>2026-04-01</td><td class="amount">EGP 6,100</td><td>Card</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C017</td><td>25-34</td><td>Female</td><td><span class="category-pill">Beauty</span></td><td>2026-04-05</td><td class="amount">EGP 520</td><td>Wallet</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C018</td><td>35-44</td><td>Male</td><td><span class="category-pill">Sports</span></td><td>2026-04-09</td><td class="amount">EGP 1,300</td><td>Cash on Delivery</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C019</td><td>18-24</td><td>Female</td><td><span class="category-pill">Fashion</span></td><td>2026-04-13</td><td class="amount">EGP 1,200</td><td>Wallet</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C020</td><td>25-34</td><td>Male</td><td><span class="category-pill">Electronics</span></td><td>2026-04-18</td><td class="amount">EGP 2,800</td><td>Card</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C021</td><td>35-44</td><td>Female</td><td><span class="category-pill">Home</span></td><td>2026-05-03</td><td class="amount">EGP 2,300</td><td>Wallet</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C022</td><td>18-24</td><td>Male</td><td><span class="category-pill">Sports</span></td><td>2026-05-07</td><td class="amount">EGP 850</td><td>Cash on Delivery</td><td class="rating">★ 3/5</td></tr><tr><td class="customer-id">C023</td><td>25-34</td><td>Female</td><td><span class="category-pill">Fashion</span></td><td>2026-05-11</td><td class="amount">EGP 1,600</td><td>Card</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C024</td><td>45+</td><td>Female</td><td><span class="category-pill">Beauty</span></td><td>2026-05-16</td><td class="amount">EGP 900</td><td>Wallet</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C025</td><td>35-44</td><td>Male</td><td><span class="category-pill">Electronics</span></td><td>2026-05-21</td><td class="amount">EGP 4,800</td><td>Card</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C026</td><td>18-24</td><td>Female</td><td><span class="category-pill">Beauty</span></td><td>2026-06-02</td><td class="amount">EGP 700</td><td>Cash on Delivery</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C027</td><td>25-34</td><td>Male</td><td><span class="category-pill">Home</span></td><td>2026-06-08</td><td class="amount">EGP 1,950</td><td>Card</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C028</td><td>35-44</td><td>Female</td><td><span class="category-pill">Fashion</span></td><td>2026-06-13</td><td class="amount">EGP 1,350</td><td>Wallet</td><td class="rating">★ 5/5</td></tr><tr><td class="customer-id">C029</td><td>18-24</td><td>Male</td><td><span class="category-pill">Electronics</span></td><td>2026-06-19</td><td class="amount">EGP 3,900</td><td>Card</td><td class="rating">★ 4/5</td></tr><tr><td class="customer-id">C030</td><td>25-34</td><td>Female</td><td><span class="category-pill">Sports</span></td><td>2026-06-24</td><td class="amount">EGP 1,150</td><td>Cash on Delivery</td><td class="rating">★ 5/5</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="insight-note mt-4">
+      <div class="note-icon">i</div>
+      <div><strong>About this dataset</strong><p>For this student project, the 30 order records are simulated for demonstration and learning. They do not represent real customers or actual company sales. Order values are shown in EGP. Average order value = total order value ÷ number of orders.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container-fluid page-wrap d-flex flex-column flex-md-row justify-content-between gap-2"><span>ShopScope · E-Commerce Customer Behavior</span><span>Web Development for Data Dissemination · Project 9</span></div></footer>
+
+  <script>
+    const money = value => new Intl.NumberFormat("en-EG", {maximumFractionDigits:0}).format(value);
+    let allOrders = [];
+    let charts = {};
+    const palette = {teal:"#168b8d",navy:"#243f52",coral:"#e07a69",gold:"#d9a441",blue:"#7b9bb2",light:"#d9e7e9"};
+    const $ = id => document.getElementById(id);
+    function countBy(items,key){return items.reduce((a,x)=>{a[x[key]]=(a[x[key]]||0)+1;return a},{})}
+    function average(a){return a.length?a.reduce((s,x)=>s+x,0)/a.length:0}
+    function monthLabel(d){return new Date(d+"T00:00:00").toLocaleString("en-US",{month:"short",year:"2-digit"})}
+    function updateChart(id,labels,datasets){charts[id].data.labels=labels;charts[id].data.datasets=datasets;charts[id].update()}
+    function createCharts(){
+      Chart.defaults.font.family="'DM Sans', sans-serif";Chart.defaults.color="#758592";Chart.defaults.plugins.legend.labels.usePointStyle=true;
+      const common={responsive:true,maintainAspectRatio:false};
+      charts.demographicsChart=new Chart($("demographicsChart"),{type:"bar",data:{labels:[],datasets:[]},options:{...common,plugins:{title:{display:true,text:"Orders by age group and gender"},legend:{position:"bottom"}},scales:{x:{title:{display:true,text:"Age group"},grid:{display:false}},y:{title:{display:true,text:"Number of orders"},beginAtZero:true,ticks:{precision:0}}}}});
+      charts.purchasesChart=new Chart($("purchasesChart"),{type:"line",data:{labels:[],datasets:[]},options:{...common,plugins:{title:{display:true,text:"Purchases by month"},legend:{display:false}},scales:{x:{title:{display:true,text:"Month"},grid:{display:false}},y:{title:{display:true,text:"Number of purchases"},beginAtZero:true,ticks:{precision:0}}}}});
+      charts.popularChart=new Chart($("popularChart"),{type:"bar",data:{labels:[],datasets:[]},options:{...common,indexAxis:"y",plugins:{title:{display:true,text:"Orders by product category"},legend:{display:false}},scales:{x:{title:{display:true,text:"Number of orders"},beginAtZero:true,ticks:{precision:0}},y:{title:{display:true,text:"Product category"}}}}});
+      charts.paymentChart=new Chart($("paymentChart"),{type:"pie",data:{labels:[],datasets:[]},options:{...common,plugins:{title:{display:true,text:"Payment method distribution"},legend:{position:"bottom"}}}});
+    }
+    function render(){
+      const chosen=$("categoryFilter").value, rows=chosen==="All"?allOrders:allOrders.filter(x=>x.category===chosen);
+      $("totalOrders").textContent=rows.length;$("averageOrder").textContent="EGP "+money(average(rows.map(x=>x.orderValue)));$("averageRating").textContent=average(rows.map(x=>x.rating)).toFixed(1)+" / 5";$("recordCount").textContent=rows.length+" of "+allOrders.length+" records";
+      const ages=["18-24","25-34","35-44","45+"], gender=["Female","Male"].map((g,i)=>({label:g,data:ages.map(a=>rows.filter(x=>x.ageGroup===a&&x.gender===g).length),backgroundColor:i?palette.coral:palette.teal,borderRadius:6}));
+      updateChart("demographicsChart",ages,gender);const ageTop=Object.entries(countBy(rows,"ageGroup")).sort((a,b)=>b[1]-a[1])[0];$("demographicsFinding").innerHTML=ageTop?`<strong>Finding:</strong> Age group ${ageTop[0]} has the most orders (${ageTop[1]}). <span class="source-note">Source: project dataset (simulated records).</span>`:"No records.";
+      const mm={};rows.forEach(x=>{const m=x.purchaseDate.slice(0,7);mm[m]=(mm[m]||0)+1});const months=Object.keys(mm).sort();updateChart("purchasesChart",months.map(m=>monthLabel(m+"-01")),[{label:"Orders",data:months.map(m=>mm[m]),borderColor:palette.teal,backgroundColor:"#168b8d22",fill:true}]);const peak=months.sort((a,b)=>mm[b]-mm[a])[0];$("purchasesFinding").innerHTML=peak?`<strong>Finding:</strong> ${monthLabel(peak+"-01")} has the most purchases (${mm[peak]}). <span class="source-note">Source: project dataset (simulated records).</span>`:"No records.";
+      const cats=Object.entries(countBy(rows,"category")).sort((a,b)=>b[1]-a[1]);updateChart("popularChart",cats.map(x=>x[0]),[{label:"Orders",data:cats.map(x=>x[1]),backgroundColor:[palette.teal,palette.blue,palette.coral,palette.gold,palette.navy],borderRadius:6}]);$("popularFinding").innerHTML=cats.length?`<strong>Finding:</strong> ${cats[0][0]} is the most popular category (${cats[0][1]} orders). <span class="source-note">Source: project dataset (simulated records).</span>`:"No records.";
+      const pays=Object.entries(countBy(rows,"paymentMethod")).sort((a,b)=>b[1]-a[1]);updateChart("paymentChart",pays.map(x=>x[0]),[{data:pays.map(x=>x[1]),backgroundColor:[palette.teal,palette.coral,palette.gold,palette.blue],borderColor:"#fff",borderWidth:3}]);$("paymentFinding").innerHTML=pays.length?`<strong>Finding:</strong> ${pays[0][0]} is the most used method (${pays[0][1]} orders). <span class="source-note">Source: project dataset (simulated records).</span>`:"No records.";
+      $("dataTable").innerHTML=rows.map(x=>`<tr><td class="customer-id">${x.customerId}</td><td>${x.ageGroup}</td><td>${x.gender}</td><td><span class="category-pill">${x.category}</span></td><td>${x.purchaseDate}</td><td class="amount">EGP ${money(x.orderValue)}</td><td>${x.paymentMethod}</td><td class="rating">★ ${x.rating}/5</td></tr>`).join("")||'<tr><td colspan="8" class="text-center py-4">No orders found.</td></tr>';
+    }
+    async function initDashboard(){
+      try {
+        const response = await fetch("data.json");
+        if (!response.ok) throw new Error("Could not load data.json");
+        allOrders = await response.json();
+        [...new Set(allOrders.map(x=>x.category))].sort().forEach(x=>$ ("categoryFilter").add(new Option(x,x)));
+        createCharts();
+        render();
+        $("categoryFilter").addEventListener("change",render);
+        $("resetFilter").addEventListener("click",()=>{$("categoryFilter").value="All";render()});
+      } catch (error) {
+        $("recordCount").textContent = "Dataset could not be loaded";
+        $("dataTable").innerHTML = '<tr><td colspan="8" class="text-center py-4">Please run this website with Live Server or GitHub Pages so data.json can load.</td></tr>';
+        console.error(error);
+      }
+    }
+    initDashboard();
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
